@@ -1,0 +1,401 @@
+html{
+	font-size: 20px;
+}
+
+html,body{
+	width: 100%;
+	background-color: #EBEBEB;
+}
+
+a{
+	text-decoration: none;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 4rem;
+	font-size: 1.5rem;
+	line-height: 4rem;
+	background-color: #fff;
+	display: flex;
+	z-index: 999;
+}
+
+.header-item{
+	display: block;
+	flex:1;
+	color: #5b5b5b;
+	text-decoration: none;
+	text-align: center;
+	border-bottom: 0.25rem;
+	border-bottom-style: solid;
+	border-color: #fff;
+	box-sizing: border-box;
+}
+
+.header-item a{
+	color: #5b5b5b;
+	text-decoration: none;
+	border-bottom: 0.25rem;
+	border-bottom-style: solid;
+	border-color: #fff;
+	display: block;
+	width: 100%;
+}
+
+.header-item a.active{
+	border-color: #df3031;
+}
+
+.footer{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 5rem;
+	display: flex;
+	z-index: 999;
+}
+
+.footer-inner{
+	position: relative;
+	left: 0;
+	top: 1rem;
+	height: 5rem;
+	width: 100%;
+	font-size: 1.5rem;
+	line-height: 4rem;
+	background-color: #fff;
+	display: flex;
+	box-shadow: 0 6px 8px #B1B1B1;
+}
+
+.footer-item{
+	flex: 1;
+	text-align: center;
+}
+
+.footer-item.active{
+	color: #df3031;
+}
+
+.content{
+	margin-top: 4rem;
+	padding-top: 1rem;
+}
+
+.swiper-container {
+	height: 175px;
+}
+
+.swiper-container img{
+	width: 100%;
+}
+
+.content-list{
+	margin-top: 1rem;
+}
+
+.content-item{
+	margin-top: 1rem;
+	padding: 0.5rem;
+	background-color: #fff;
+	box-shadow: 0 2px 2px #B1B1B1;
+	-ms-text-align-last: left;
+	text-align-last: left;
+}
+
+.content-item h4{
+	font-size: 1.5rem;
+	padding-bottom: .5rem;
+	color: #383838;
+	font-weight: normal;
+}
+
+.content-item p{
+	font-size: 1rem;
+	padding-top: .5rem;
+	color: #999999;
+}
+
+.point-list{
+	background-color: #fff;
+	padding: 10px;
+	margin-bottom: 5rem;
+}
+
+.point-item{
+	height: 150px;
+	width: 100%;
+	background-image: url(assets/img/pointBg.jpg);
+	-webkit-background-size: 100%;
+	background-size: 100%;
+	margin-bottom: 10px;
+}
+
+.point-item-cover{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.6);
+	    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+}
+
+.point-episode{
+	position: absolute;
+    left: 0;
+    top: 0;
+    color: #eee;
+    display: inline-block;
+    padding: 2px;
+    font-size: 13px;
+}
+
+.point-caption{
+	font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #fff;
+}
+
+.point-main{
+	color: #eee;
+    margin: 10px 20px;
+    line-height: 1.3;
+    font-size: 13px;
+    overflow: hidden;
+    word-break: break-all;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+}
+
+.user-content{
+	margin-top: 0;
+	padding-top: 0;
+}
+
+.info-bg{
+	height: 300px;
+	background-color: #00E599;
+	border-top: 1px solid #00E599;
+}
+
+.avatar{
+	width: 90px;
+	height: 90px;
+	margin: auto;
+	margin-top: 110px;
+	border: 3px solid #fff;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.avatar img{
+	width: 100%;
+	height: 100%;
+}
+
+.username{
+	font-size: 20px;
+	color: #fff;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.todolist{
+	margin-top: 10px;
+	background-color: #fff;
+	padding: 0 10px;
+	text-align: left;
+}
+
+.doitem{
+	position: relative;
+	height: 40px;
+	font-size: 20px;
+	line-height: 40px;
+	color: #999999;
+}
+
+.doitem:after{
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 1px;
+	width: 100%;
+}
+
+/*文章样式*/
+.article-header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 4rem;
+	background-color: #fff;
+	z-index: 999;
+}
+
+.article-header-inner{
+	position: relative;
+}
+
+.back{
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	height: 4rem;
+	width: auto;
+	padding: 0 1rem;
+	font-size: 1.5rem;
+	line-height: 4rem;
+	color: #3F6EFF;
+}
+
+.article-container{
+	position: relative;
+	margin-top: 4rem;
+	text-align: left;
+	background-color: #fff;
+}
+
+.article-pic{
+	position: relative;
+}
+
+.article-pic img{
+	width: 100%;
+}
+
+.article-content{
+	padding: 0 1rem;
+}
+
+.article-author{
+	height: 2.5rem;
+	font-size: 1.5rem;
+	line-height: 2.5rem;
+    margin: 0 -1rem;
+	padding: 1rem;
+	border-bottom: 1px solid #999999;
+}
+
+.article-title{
+	font-size: 25px;
+	color: #000;
+}
+
+.article-detail{
+	margin-top: 10px;
+	font-size: 14px;
+	color: #3A3A3A;
+}
+
+.lanmu-container{
+	width: 100%;
+	position: relative;
+	margin-bottom: 5rem;
+}
+.lanmu-list{
+	margin: 0 1rem;
+	width: auto;
+	overflow: hidden;
+}
+
+.lanmu-item{
+	float: left;
+	width: 50%;
+	padding: 0.5rem;
+	box-sizing: border-box;
+}
+
+.lanmu-item-inner{
+	position: relative;
+	background-color: rgba(0,0,0,.8);
+	height: 20rem;
+	overflow: hidden;
+}
+
+.lanmu-avatar{
+	width: 10rem;
+	height: 10rem;
+	margin: 1rem auto 0;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 2px solid #df3031;
+}
+
+.lanmu-avatar img{
+	width: 100%;
+	height: 100%;
+}
+
+.lanmu-name{
+	margin: auto;
+	margin-top: 1rem;
+	width: 4rem;
+	color: #fff;
+	font-size: 24px;
+	line-height: 30px;
+}
+
+.lanmu-follow{
+	margin: auto;
+	margin-top: 1rem;
+	width: 6rem;
+	color: #fff;
+	font-size: 14px;
+	line-height: 24px;
+	background-color: #df3031;
+	text-align: center;
+}
+
+/*路由切换样式*/
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */ {
+  opacity: 0
+}
+
+
+
+
+@media only screen and (min-device-width: 320px)and (-webkit-min-device-pixel-ratio: 2) {
+   html{font-size:10px;}
+}
+@media only screen and (min-device-width: 375px)and (-webkit-min-device-pixel-ratio: 2) {
+　　html{font-size:12px;}
+}
+   
+@media only screen and (min-device-width: 375px)and (-webkit-min-device-pixel-ratio: 3) {
+　　html{font-size:16px;}
+   
+}
+@media only screen and (min-device-width:412px) and (-webkit-min-device-pixel-ratio: 3) {
+　　html{font-size:20px;}
+}

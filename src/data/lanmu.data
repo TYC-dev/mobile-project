@@ -1,0 +1,25 @@
+[{
+	"name" : "张大",
+	"avatarUrl" :"./src/assets/img/a3.png"
+},{
+	"name" : "李大",
+	"avatarUrl" :"./src/assets/img/a2.png"
+},{
+	"name" : "王大",
+	"avatarUrl" :"./src/assets/img/a3.png"
+},{
+	"name" : "赵大",
+	"avatarUrl" :"./src/assets/img/a4.png"
+},{
+	"name" : "张大",
+	"avatarUrl" :"./src/assets/img/a5.png"
+},{
+	"name" : "大狗",
+	"avatarUrl" :"./src/assets/img/a2.png"
+},{
+	"name" : "刘蛤",
+	"avatarUrl" :"./src/assets/img/c.png"
+},{
+	"name" : "哈哈",
+	"avatarUrl" :"./src/assets/img/a5.png"
+}]
