@@ -3,10 +3,12 @@
 		<div class="content">
 			<div class="lanmu-container">
 				<div class="lanmu-list">
-					<div class="lanmu-item" v-for="item in arrData">
+					<div class="lanmu-item" 
+						v-for="item in lanmuData"
+						:key="item.index">
 						<div class="lanmu-item-inner">
 							<div class="lanmu-avatar">
-								<img :src="item.avatarUrl" alt="">
+								<img :src="item.avatar" alt="">
 							</div>
 							<div class="lanmu-name">
 								{{ item.name }}
@@ -24,11 +26,13 @@
 </template>
 
 <script>
+	import { get_lanmu } from '../axios/api'
+
 	export default{
 		name: 'lanmu',
 		data(){
 			return{
-				arrData:[]
+				lanmuData:[]
 			}
 		},
 		mounted(){
@@ -37,10 +41,13 @@
 		methods: {
 			fetchData(){
 				var _this = this;
-				this.$http.get('./src/data/lanmu.data').then(function(res) {
-					_this.arrData = res.data;
-					console.log(_this.arrData);
-				})
+				get_lanmu()
+					.then(function(res){
+						_this.lanmuData = res.data.lanmuData
+					})
+					.catch(function(error){
+						Console.log('加载失败：'+ error)
+					})
 			}
 		}
 	}

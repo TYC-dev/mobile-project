@@ -19,6 +19,8 @@
 </template>
 
 <script>
+	import { get_article } from '../axios/api'
+
 	export default{
 		name: 'article',
 		mounted(){
@@ -47,10 +49,13 @@
 		methods:{
 			fetchData(id){
 				var _this = this
-				this.$http.get('./src/data/article.data').then(function(res) {
-					console.log(id);
-					_this.artData = res.data[id];
-				})
+				get_article()
+					.then(function(res){
+						_this.artData = res.data.articleData[id]
+					})
+					.catch(function(){
+						console.log('shibai: '+ error)
+					})
 				// console.log(_this.artData)
 			}
 		}

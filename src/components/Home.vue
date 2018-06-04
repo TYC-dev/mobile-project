@@ -9,15 +9,17 @@
 			</marquee>
 		</div>
 		<div class="content-list">
-			<div class="content-item" v-for="( item,index ) in arrList">
+			<div class="content-item" 
+				v-for="( item,index ) in arrList"
+				:key="item.index">
 				<router-link :to="'./article/'+index">
 					<div class="content-item-inner">
 						<div class="item-pic" v-if=" index == 0 ">
 							<img src="http://www.tuoyucong.top/vue-test/src/assets/img/fl01.png" alt="">
 						</div>
 						<div class="item-title" v-bind:class="{ 'item-title-with-pic': index == 0}">
-							<h4>{{ item.title }}</h4>
-							<div class="item-source">{{ item.author }}</div>
+							<h4>{{ item.tittle }}</h4>
+							<div class="item-source">{{ item.sourceName }}</div>
 						</div>
 					</div>
 				</router-link>
@@ -27,8 +29,10 @@
 </template>
 
 <script>
-import { Marquee, MarqueeItem } from 'vux'
+	import { Marquee, MarqueeItem } from 'vux'
 	import banner from '@/components/Banner'  //引入轮播图的banner
+
+	import { get_news } from '../axios/api'
 
 	export default{
 		name: 'home',
@@ -61,9 +65,13 @@ import { Marquee, MarqueeItem } from 'vux'
 		methods:{
 			fetchData(){
 				var _this = this
-				this.$http.get('src/data/article.data').then(function(res) {
-					_this.arrList = res.data;
-				})
+				get_news()
+					.then(function(res){
+						_this.arrList = res.data.newsTittle
+					})
+					.catch(function(error){
+						console.log('shibai'+ error)
+					})
 			}
 		},
 		beforeDestroy: function() {
