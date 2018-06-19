@@ -7,7 +7,7 @@ const Random = Mock.Random;
 
 const pruduceNewsTittleData = function(){
     let newsTittle = []
-    for(let i = 0; i < 15; i++){
+    for(let i = 0; i < 14; i++){
         let newTittleObject = {
             tittle: Random.csentence(5,20),
             sourceName: Random.cname(),
