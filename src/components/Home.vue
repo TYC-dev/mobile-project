@@ -24,6 +24,7 @@
 					</div>
 				</router-link>
 			</div>
+			<div class="loading-box">加载中</div>
 		</div>
 	</div>
 </template>
@@ -48,7 +49,8 @@
 				},{
 					id: 3,
 					content: '歌手称特朗普是兄弟 掉粉900万'
-				}]
+				}],
+				loadMore: false
 			}
 		},
 		created: function(){
@@ -61,13 +63,32 @@
 		},
 		mounted(){
 			this.fetchData()
+
+			window.addEventListener('scroll',()=>{
+				let clientHeight = document.documentElement.clientHeight||window.innerHeight;
+				let offsetHeight = document.documentElement.offsetHeight
+				let scrollTop = document.documentElement.scrollTop||window.pageYOffset||document.body.scrollTop
+				
+				//console.log('可视区域: ' + document.documentElement.clientHeight + '.....' + window.innerHeight)
+				//console.log('布局高度: ' + document.documentElement.offsetHeight)
+				//console.log('顶部距离: ' + scrollTop)
+
+				if(scrollTop + clientHeight >= offsetHeight){
+					setTimeout(() => {
+						this.fetchData()
+					},700)
+					
+				}
+			})
 		},
 		methods:{
 			fetchData(){
 				var _this = this
 				get_news()
 					.then(function(res){
-						_this.arrList = res.data.newsTittle
+						let list = res.data.newsTittle
+              			list.map(n => _this.arrList.push(n))
+						console.log('data loaded!')
 					})
 					.catch(function(error){
 						console.log('shibai'+ error)
@@ -75,8 +96,8 @@
 			}
 		},
 		beforeDestroy: function() {
-        document.body.removeAttribute("class","body_white_bg");
-    }
+        	document.body.removeAttribute("class","body_white_bg");
+    	}
 	}
 
 	</script>
@@ -143,6 +164,12 @@
 			padding: 0 10px;
 			margin-top: 5.5rem;
 			border-radius: 8px;
+			padding-bottom: 5rem;
+		}
+		.loading-box{
+			font-size: 18px;
+			line-height: 24px;
+			text-align: center;
 		}
 		
 	</style>
